@@ -1,0 +1,19 @@
+{
+    "ligabaloncestoApp": {
+        "liga" : {
+            "home": {
+                "title": "Ligas",
+                "createLabel": "Créer un nouveau Liga",
+                "createOrEditLabel": "Créer ou éditer un Liga"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Liga {{ id }} ?"
+            },
+            "detail": {
+                "title": "Liga"
+            },
+            "nombre": "Nombre"
+        }
+    }
+}
+

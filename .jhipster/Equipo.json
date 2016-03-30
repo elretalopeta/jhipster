@@ -1,0 +1,69 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "jugador",
+            "otherEntityName": "jugador",
+            "relationshipType": "one-to-many",
+            "ownerSide": false,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "equipo"
+
+        },
+        {
+        "relationshipId": 2,
+        "relationshipName": "scio",
+        "otherEntityName": "socio",
+        "relationshipType": "many-to-many",
+        "ownerSide": false,
+        "otherEntityField": "nombre",
+        "otherEntityRelationshipName": "equipo"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "entrenador",
+            "otherEntityName": "entrenador",
+            "relationshipType": "one-to-one",
+            "ownerSide": true,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "equipo"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "estadio",
+            "otherEntityName": "estadio",
+            "relationshipType": "one-to-one",
+            "ownerSide": true,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "equipo"
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "temporada",
+            "otherEntityName": "temporada",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "equipo"
+        }],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "localidad",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "fecha",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20151203175943",
+    "dto": "no",
+    "pagination": "pagination"
+}

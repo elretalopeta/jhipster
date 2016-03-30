@@ -1,0 +1,34 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "partido",
+            "otherEntityName": "partido",
+            "relationshipType": "many-to-one",
+            "ownerSide": true,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "entrenador"
+
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "entrenador"
+
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151209162348",
+    "dto": "no",
+    "pagination": "pagination"
+}

@@ -1,0 +1,23 @@
+{
+    "ligabaloncestoApp": {
+        "estadistica" : {
+            "home": {
+                "title": "Estadisticas",
+                "createLabel": "Créer un nouveau Estadistica",
+                "createOrEditLabel": "Créer ou éditer un Estadistica"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Estadistica {{ id }} ?"
+            },
+            "detail": {
+                "title": "Estadistica"
+            },
+            "asistencias": "Asistencias",
+            "canastas": "Canastas",
+            "faltas": "Faltas",
+            "partido": "Partido",
+            "jugador": "Jugador"
+        }
+    }
+}
+

@@ -1,0 +1,72 @@
+
+<div>
+    <h2><span translate="ligabaloncestoApp.equipo.detail.title">Equipo</span> {{equipo.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.equipo.nombre">Nombre</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equipo.nombre}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.equipo.localidad">Localidad</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equipo.localidad}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.equipo.fecha">Fecha</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equipo.fecha}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.equipo.entrenador">entrenador</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="entrenador.detail({id:equipo.entrenador.id})">{{equipo.entrenador.nombre}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.equipo.estadio">estadio</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="estadio.detail({id:equipo.estadio.id})">{{equipo.estadio.nombre}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.equipo.temporada">temporada</span>
+                </td>
+                <td>
+                    <span ng-repeat="temporada in equipo.temporadas">
+                        <a class="form-control-static" ui-sref="temporada.detail({id: {{temporada.id}}})">{{temporada.nombre}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

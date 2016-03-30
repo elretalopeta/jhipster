@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+
+<body ng-app="myApp" ng-controller="jugadorCtrl">
+
+<form name="myForm">
+    <p>Jugador:
+        <input name="myName" ng-model="myName" required>
+        <span ng-show="myForm.myName.$touched">The jugador es requerido.</span>
+    </p>
+
+    <p>Email:
+        <input type="email" name="myInput" ng-model="myInput">
+        <span ng-show="myForm.myName.$touched">The email no valido.</span>
+    </p>
+</form>
+
+<h1>{{myForm.myInput.$valid}}</h1>
+
+</body>
+</html>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('jugadorCtrl', function($scope, $http) {
+        $http.get("http://127.0.1.1:8080/api/jugadors")
+            .then(function (response) {
+                $scope.names = response.data;
+            });
+
+        $scope.orderByMe = function(x) {
+            $scope.myOrderBy = x;
+        }
+    });
+
+
+</script>

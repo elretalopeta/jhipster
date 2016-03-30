@@ -1,0 +1,132 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPartidoLabel" translate="ligabaloncestoApp.partido.home.createOrEditLabel">Create or edit a Partido</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="partido.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.hora_inicio" for="field_hora_inicio">Hora_inicio</label>
+            <input type="datetime-local" class="form-control" name="hora_inicio" id="field_hora_inicio"
+                    ng-model="partido.hora_inicio" ng-model-options="{timezone: 'UTC'}"
+                    required>
+
+            <div ng-show="editForm.hora_inicio.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.hora_inicio.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.hora_inicio.$error.datetimelocal" translate="entity.validation.datetimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.hora_final" for="field_hora_final">Hora_final</label>
+            <input type="datetime-local" class="form-control" name="hora_final" id="field_hora_final"
+                    ng-model="partido.hora_final" ng-model-options="{timezone: 'UTC'}"
+                    required>
+
+            <div ng-show="editForm.hora_final.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.hora_final.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.hora_final.$error.datetimelocal" translate="entity.validation.datetimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.equipo_local" for="field_equipo_local">Equipo_local</label>
+            <input type="text" class="form-control" name="equipo_local" id="field_equipo_local"
+                    ng-model="partido.equipo_local"
+                    required>
+
+            <div ng-show="editForm.equipo_local.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.equipo_local.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.equipo_visitante" for="field_equipo_visitante">Equipo_visitante</label>
+            <input type="text" class="form-control" name="equipo_visitante" id="field_equipo_visitante"
+                    ng-model="partido.equipo_visitante"
+                    required>
+
+            <div ng-show="editForm.equipo_visitante.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.equipo_visitante.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.arbitro" for="field_arbitro">Arbitro</label>
+            <input type="text" class="form-control" name="arbitro" id="field_arbitro"
+                    ng-model="partido.arbitro"
+                    required>
+
+            <div ng-show="editForm.arbitro.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.arbitro.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.resultado" for="field_resultado">Resultado</label>
+            <input type="number" class="form-control" name="resultado" id="field_resultado"
+                    ng-model="partido.resultado"
+                    required>
+
+            <div ng-show="editForm.resultado.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.resultado.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.resultado.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.estadio" for="field_estadio">estadio</label>
+            
+            <select class="form-control" id="field_estadio" name="estadio" ng-model="partido.estadio" ng-options="estadio as estadio.nombre for estadio in estadios | orderBy:'id' track by estadio.id">
+                <option value=""></option>
+            </select>
+            
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.partido.temporada" for="field_temporada">temporada</label>
+            
+            <select class="form-control" id="field_temporada" name="temporada" ng-model="partido.temporada" ng-options="temporada as temporada.nombre for temporada in temporadas track by temporada.id">
+                <option value=""></option>
+            </select>
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

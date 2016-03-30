@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    table, th , td  {
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+
+<body>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td ng-click="filtrarPor('+nombre')">Nombre</td>
+            <td ng-click="filtrarPor('+posicion')">Posicion</td>
+            <td ng-click="filtrarPor('+canastasTotales')">Canastas Totales</td>
+            <td ng-click="filtrarPor('+asistenciasTotales')">Asistencias Totales</td>
+            <td ng-click="filtrarPor('jugador.equipo.id')">Equipo</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="jugador in jugadores | orderBy:filtracion">
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.nombre}}</td>
+            <td ng-if="$even">{{jugador.nombre}}</td>
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.posicion}}</td>
+            <td  ng-if="$even">{{jugador.posicion}}</td>
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.canastasTotales}}</td>
+            <td  ng-if="$even">{{jugador.canastasTotales}}</td>
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.asistenciasTotales}}</td>
+            <td  ng-if="$even">{{jugador.asistenciasTotales}}</td>
+
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.equipo.nombre}}</td>
+            <td ng-if="$even">{{jugador.equipo.nombre}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+    "ligabaloncestoApp": {
+        "arbitros" : {
+            "home": {
+                "title": "Arbitross",
+                "createLabel": "Create a new Arbitros",
+                "createOrEditLabel": "Create or edit a Arbitros"
+            },
+            "created": "A new Arbitros is created with identifier {{ param }}",
+            "updated": "A Arbitros is updated with identifier {{ param }}",
+            "deleted": "A Arbitros is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Arbitros {{ id }}?"
+            },
+            "detail": {
+                "title": "Arbitros"
+            },
+            "nombre": "Nombre",
+            "partido": "Partido",
+            "equipo": "Equipo"
+        }
+    }
+}

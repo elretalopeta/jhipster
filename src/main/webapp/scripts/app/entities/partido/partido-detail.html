@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="ligabaloncestoApp.partido.detail.title">Partido</span> {{partido.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.hora_inicio">Hora_inicio</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{partido.hora_inicio}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.hora_final">Hora_final</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{partido.hora_final}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.equipo_local">Equipo_local</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{partido.equipo_local}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.equipo_visitante">Equipo_visitante</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{partido.equipo_visitante}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.arbitro">Arbitro</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{partido.arbitro}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.resultado">Resultado</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{partido.resultado}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.estadio">estadio</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="estadio.detail({id:partido.estadio.id})">{{partido.estadio.nombre}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="ligabaloncestoApp.partido.temporada">temporada</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="temporada.detail({id:partido.temporada.id})">{{partido.temporada.nombre}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

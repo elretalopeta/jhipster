@@ -1,0 +1,32 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "estadio"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "partido",
+            "otherEntityName": "partido",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "estadio"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151209154503",
+    "dto": "no",
+    "pagination": "pagination"
+}

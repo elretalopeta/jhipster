@@ -1,0 +1,23 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "socio"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151203185105",
+    "dto": "no",
+    "pagination": "pagination"
+}

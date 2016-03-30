@@ -1,0 +1,21 @@
+{
+    "ligabaloncestoApp": {
+        "arbitros" : {
+            "home": {
+                "title": "Arbitross",
+                "createLabel": "Créer un nouveau Arbitros",
+                "createOrEditLabel": "Créer ou éditer un Arbitros"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Arbitros {{ id }} ?"
+            },
+            "detail": {
+                "title": "Arbitros"
+            },
+            "nombre": "Nombre",
+            "partido": "Partido",
+            "equipo": "Equipo"
+        }
+    }
+}
+

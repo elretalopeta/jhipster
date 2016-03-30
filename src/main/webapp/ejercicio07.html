@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title></title>
+</head>
+<body ng-app="myApp" ng-controller="customersCtrl">
+
+<ul>
+    <li ng-repeat="x in myData">
+        {{ x.nombre }}
+    </li>
+</ul>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://127.0.1.1:8080/api/jugadors").then(function (response) {
+            $scope.myData = response.data;
+        });
+    });
+</script>
+
+</body>
+</html>

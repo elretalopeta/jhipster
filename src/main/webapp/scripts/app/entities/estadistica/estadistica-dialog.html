@@ -1,0 +1,93 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myEstadisticaLabel" translate="ligabaloncestoApp.estadistica.home.createOrEditLabel">Create or edit a Estadistica</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="estadistica.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.estadistica.asistencias" for="field_asistencias">Asistencias</label>
+            <input type="number" class="form-control" name="asistencias" id="field_asistencias"
+                    ng-model="estadistica.asistencias"
+                    min="0">
+
+            <div ng-show="editForm.asistencias.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.asistencias.$error.min" translate="entity.validation.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.asistencias.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.estadistica.canastas" for="field_canastas">Canastas</label>
+            <input type="number" class="form-control" name="canastas" id="field_canastas"
+                    ng-model="estadistica.canastas"
+                    min="0">
+
+            <div ng-show="editForm.canastas.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.canastas.$error.min" translate="entity.validation.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.canastas.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.estadistica.faltas" for="field_faltas">Faltas</label>
+            <input type="number" class="form-control" name="faltas" id="field_faltas"
+                    ng-model="estadistica.faltas"
+                    min="0">
+
+            <div ng-show="editForm.faltas.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.faltas.$error.min" translate="entity.validation.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.faltas.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.estadistica.partido" for="field_partido">partido</label>
+            
+            <select class="form-control" id="field_partido" name="partido" ng-model="estadistica.partido" ng-options="partido as partido.nombre for partido in partidos track by partido.id">
+                <option value=""></option>
+            </select>
+            
+        </div>
+        <div class="form-group">
+            <label translate="ligabaloncestoApp.estadistica.jugador" for="field_jugador">jugador</label>
+            
+            <select class="form-control" id="field_jugador" name="jugador" ng-model="estadistica.jugador" ng-options="jugador as jugador.nombre for jugador in jugadors track by jugador.id">
+                <option value=""></option>
+            </select>
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

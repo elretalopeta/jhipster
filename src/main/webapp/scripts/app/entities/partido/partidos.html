@@ -1,0 +1,105 @@
+<div>
+
+    <h2 translate="ligabaloncestoApp.partido.home.title">Partidos</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="partido.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="ligabaloncestoApp.partido.home.createLabel">Create a new Partido</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deletePartidoConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(partido.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="ligabaloncestoApp.partido.delete.question" translate-values="{id: '{{partido.id}}'}">Are you sure you want to delete this Partido?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="ligabaloncestoApp.partido.hora_inicio">Hora_inicio</th>
+                    <th translate="ligabaloncestoApp.partido.hora_final">Hora_final</th>
+                    <th translate="ligabaloncestoApp.partido.equipo_local">Equipo_local</th>
+                    <th translate="ligabaloncestoApp.partido.equipo_visitante">Equipo_visitante</th>
+                    <th translate="ligabaloncestoApp.partido.arbitro">Arbitro</th>
+                    <th translate="ligabaloncestoApp.partido.resultado">Resultado</th>
+                    <th translate="ligabaloncestoApp.partido.estadio">estadio</th>
+                    <th translate="ligabaloncestoApp.partido.temporada">temporada</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="partido in partidos">
+                    <td><a ui-sref="partido.detail({id:partido.id})">{{partido.id}}</a></td>
+                    <td>{{partido.hora_inicio}}</td>
+                    <td>{{partido.hora_final}}</td>
+                    <td>{{partido.equipo_local}}</td>
+                    <td>{{partido.equipo_visitante}}</td>
+                    <td>{{partido.arbitro}}</td>
+                    <td>{{partido.resultado}}</td>
+                    <td>
+                        <a ui-sref="estadio.detail({id:partido.estadio.id})">{{partido.estadio.nombre}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="temporada.detail({id:partido.temporada.id})">{{partido.temporada.nombre}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="partido.detail({id:partido.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="partido.edit({id:partido.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(partido.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a>&lt;</a></li>
+                <li ng-show="page > 2" ng-click="loadPage(page - 2)"><a>{{page - 2}}</a></li>
+                <li ng-show="page > 1" ng-click="loadPage(page - 1)"><a>{{page - 1}}</a></li>
+                <li class="active"><a>{{page}}</a></li>
+                <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 1}}</a></li>
+                <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 2}}</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

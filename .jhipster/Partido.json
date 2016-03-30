@@ -1,0 +1,84 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "estadio",
+            "otherEntityName": "estadio",
+            "relationshipType": "one-to-one",
+            "ownerSide": true,
+            "otherEntityField": "nombre",
+            "otherEntityRelationshipName": "partido"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "temporada",
+            "otherEntityName": "temporada",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partido"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "estadistica",
+            "otherEntityName": "estadistica",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "partido"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "hora_inicio",
+            "fieldType": "DateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "hora_final",
+            "fieldType": "DateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "equipo_local",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "equipo_visitante",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "arbitro",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "resultado",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151203182059",
+    "dto": "no",
+    "pagination": "pagination"
+}

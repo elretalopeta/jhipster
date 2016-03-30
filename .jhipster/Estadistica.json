@@ -1,0 +1,54 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "partido",
+            "otherEntityName": "partido",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "estadistica"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "jugador",
+            "otherEntityName": "jugador",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "estadistica"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "asistencias",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": "0"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "canastas",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": "0"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "faltas",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": "0"
+        }
+    ],
+    "changelogDate": "20151209155144",
+    "dto": "no",
+    "pagination": "pagination"
+}

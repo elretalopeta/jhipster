@@ -1,0 +1,54 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "jugador"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "estadistica",
+            "otherEntityName": "estadistica",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "jugador"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "fechaNacimiento",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "numCanastas",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "numRebotes",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "posicion",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151202161955",
+    "dto": "no",
+    "pagination": "pagination"
+}

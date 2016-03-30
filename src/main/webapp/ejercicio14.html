@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+
+<body ng-app="myApp" ng-controller="jugadorCtrl">
+<table border="1" width="100%">
+    <tr>
+        <th ng-click="orderByMe('nombre')">Jugador</th>
+        <th ng-click="orderByMe('numCanastas')">Canastas</th>
+    </tr>
+    <tr ng-repeat="x in names | orderBy:myOrderBy">
+        <td>{{x.nombre}}</td>
+        <td>{{x.numCanastas}}</td>
+    </tr>
+</table>
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('jugadorCtrl', function($scope, $http) {
+            $http.get("http://127.0.1.1:8080/api/jugadors")
+                .then(function (response) {
+                    $scope.names = response.data;
+                });
+
+            $scope.orderByMe = function(x) {
+                $scope.myOrderBy = x;
+            }
+        });
+
+
+</script>

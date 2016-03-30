@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd)	{
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <table>
+        <tr ng-repeat="x in names">
+            <td>{{ x.nombre }}</td>
+            <td>{{ x.posicion }}</td>
+            <td>{{ x.fechaNacimiento }}</td>
+            <td>{{ x.numCanastas }}</td>
+            <td>{{ x.numRebotes }}</td>
+
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://127.0.1.1:8080/api/jugadors")
+            .then(function (response) {$scope.names = response.data;});
+    });
+</script>
+
+</body>
+</html>
